@@ -10,20 +10,21 @@ int main(void)
 	int i = 0;
 	char c = 'a';
 
-	while (i< 26)
+	while (i < 26)
 	{
+		putchar(c);
+		i++, c++;
+	}
 
-    for (ch = 'a'; ch <= 'z'; ch++)
-    {
-        putchar(ch);
-    }
-	 for (ch = 'A'; ch <= 'Z'; ch++)
-    {
-        putchar(ch);
-    }
+	i = 0;
+	c = 'A';
+	while (i < 26)
+	{
+		putchar(c);
+		i++, c++;
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return 0;
+	return (0);
 }
-
