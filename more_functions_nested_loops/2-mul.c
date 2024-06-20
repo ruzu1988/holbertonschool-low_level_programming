@@ -2,15 +2,12 @@
 
 /**
  * mul - multiplies two integers
- * @a: this character multiplies
- * @b: this character multiplies
- * Return: Always 0
+ * @a: first number
+ * @b: second number
+ * Return: returns result
  */
 
 int mul(int a, int b)
-
 {
-	for ((int a) mul ( int b))
-		printf(a);
-			printf(b);
+	return (a * b);
 }
