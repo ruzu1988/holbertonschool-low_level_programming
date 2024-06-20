@@ -1,5 +1,4 @@
 i#include "main.h"
-#include <stdio.h>
 
 /**
 * add - adds two values
