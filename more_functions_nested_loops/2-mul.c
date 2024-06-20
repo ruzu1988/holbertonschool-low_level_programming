@@ -2,7 +2,8 @@
 
 /**
  * mul - multiplies two integers
- *
+ * @a: this character multiplies
+ * @b: this character multiplies
  * Return: Always 0
  */
 
