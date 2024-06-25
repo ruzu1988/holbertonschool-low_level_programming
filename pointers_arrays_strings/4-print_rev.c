@@ -4,9 +4,10 @@
  * print_rev - prints a string in reverse, followed by a new line
  * @s: string to be printed
  */
+
 void print_rev(char *s)
 {
-	int i, j, len;
+	int i, j, lenght;
 
 	i = 0;
 
@@ -15,9 +16,9 @@ void print_rev(char *s)
 		i++;
 	}
 
-	len = i;
+	lenght = i;
 
-	for (j = len - 1; j >= 0; j--)
+	for (j = lenght - 1; j >= 0; j--)
 	{
 		_putchar(s[j]);
 	}
