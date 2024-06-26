@@ -1,22 +1,24 @@
 #include <stdio.h>
 
 /**
- * main - prints all possible cominations of single-digit numbers.
+ * main - Entry point
  *
- * Return: Always 0
+ * Return: Always 0 (success)
  */
-
 int main(void)
 {
-	int num;
-	for (num = '0'; num <= '9'; num++);
-	putchar((num % 10) + '0');
-		if (num == 9)
-			
-			putchar(',');
-		putchar(' ');
-		
-		putchar('\n');
+	int num = 48;
 
+	while (num <= 57)
+	{
+		putchar(num);
+		if (num != 57)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		num++;
+	}
+	putchar('\n');
 	return (0);
 }
