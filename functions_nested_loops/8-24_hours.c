@@ -3,30 +3,42 @@
 /**
  * jack_bauer - prints every minute of the day
  *
- * Return: ...
+ * Return: (void)
  */
-
 void jack_bauer(void)
 
 {
-	int a, b, c, d;
+	char houra = '0';
+	char hourb = '0';
+	char mina = '0';
+	char minb = '0';
 
-	for (a = 0; a <= 2; a++)
+	while (minb <= '9')
 	{
-		for (b = 0; b <= 9; b++)
+		if (houra == '2' && hourb == '4')
+			break;
+		_putchar(houra);
+		_putchar(hourb);
+		_putchar(':');
+		_putchar(mina);
+		_putchar(minb);
+		_putchar('\n');
+		minb++;
+		if (minb == ':')
 		{
-			if ((a <= 1 && b <= 9) || (a <= 2 && b <= 3))
+			minb = '0';
+			mina++;
+			if (mina == '6')
 			{
-				for (c = 0; c <= 5; c++)
+				minb = '0';
+				mina = '0';
+				hourb++;
+				if (hourb == ':')
 				{
-					for (d = 0; d <= 9; d++)
-					{
-						_putchar(a + '0');
-						_putchar(b + '0');
-						_putchar(58);
-						_putchar(c + '0');
-						_putchar('\n');
-					}
+					minb = '0';
+					mina = '0';
+					hourb = '0';
+					houra++;
 				}
 			}
 		}
