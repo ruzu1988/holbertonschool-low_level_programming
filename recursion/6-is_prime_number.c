@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * primo - makes possible to evaluate from 1 to n
+ * primo_helper - makes possible to evaluate from 1 to n
  * @a: same number as n
  * @b: number that iterates from 1 to n
  * Return: (1)
  */
 
-int primo_helper( int a, int b)
+int primo_helper(int a, int b)
 {
 	if (a == b)
 		return (1);
