@@ -1,19 +1,27 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * _sqrt_recursion - return the natural square root of a number
- * @n: the number to find the square foot of
+ * @num: number is squared and compares against base
+ * @base: base number
  * Return: the square root or -1 n does not have a natural square root
  */
 
+int num(int n, int base)
+{
+	if (n * n == base)
+		return (n);
+	if (n * n > base)
+		return (-1);
+	return (num(n + 1, base));
+}
+
+/**
+ * _sqtr_recursion -  return the natural square root of a number
+ * @n: base number
+ * Return: the natural square root of number n
+ */
+
 int _sqrt_recursion(int n)
-
-	if (n < 0)
-	return (-1);
-
-if (n == -1)
-	return (1);
-
-	return (_sqrt_recursion(n - 1));
-
+{
+	return (num(1, n));
+}
