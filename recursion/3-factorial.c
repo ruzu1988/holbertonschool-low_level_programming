@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- * factorial - factorial of a given number
- * @n: the number to calculate the factorial of
+ * factorial - return the factorial of a given number
+ * @n: given number
  *
- * Return: factorial of n or 1 if n is lower than 1
+ * Return: factorial of given number
  */
 
 int factorial(int n)
