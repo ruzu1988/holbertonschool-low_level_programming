@@ -1,29 +1,28 @@
 #include "main.h"
-
 /**
- * helper_prime - check if a number is prime
- * @n: the number to check
- * @i: for current divisor being tested
- * @limit: stop
- * Return: 1 if n is prime, 0 otherwise
+ * primo - makes possible to evaluate from 1 to n
+ * @a: same number as n
+ * @b: number that iterates from 1 to n
+ * Return: (1)
  */
 
-int helper_prime(int n, int i, int limit)
-
-if ((n % i == 0 && i <= limit) || n < 0 || n == 1)
-	return (0);
-if (i > limit)
-	return (1);
-	return (helper_prime(n, i + 1, limit));
-
-	/**
-	 * is_prime_number - checks if a number is a prime number
-	 * @n: number to check
-	 *
-	 * Return: 1 if n is a prime, 0 otherwise
-	 */
+int primo_helper( int a, int b)
+{
+	if (a == b)
+		return (1);
+	else if (a % b == 0)
+		return (0);
+	return (primo_helper(a, b + 1));
+}
+/**
+ * is_prime_number - checks if a number is prime
+ * @n: integer
+ * Return: (1);
+ */
 
 int is_prime_number(int n)
 {
-	return (helper_prime(n, 2, n / 2));
+	if (n <= 1)
+		return (0);
+	return (primo_helper(n, 2));
 }
