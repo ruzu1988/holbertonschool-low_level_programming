@@ -2,7 +2,7 @@
 
 /**
  * main - value
- * @argc: value
+ * @argc: argumentos
  * @argv: varibale
  * Return: 0
  */
@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
 {
 	int i;
 
-	for (i = 0; argv == 0; i++)
+	for (i = 0; i < argc; i++)
 	{
-		printf("%s\n", argc[argv]);
+		printf("%s\n", argv[i]);
 	}
 	return (0);
 }
