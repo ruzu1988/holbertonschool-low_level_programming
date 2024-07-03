@@ -2,7 +2,7 @@
 
 /**
  * main - value
- * @argc: argumentos
+ * @argc: value
  * @argv: varibale
  * Return: 0
  */
