@@ -11,20 +11,22 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *calloc;
+	char *calloc;
 	unsigned int total_size;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	total_size = nmemb * size;
-
-	calloc = malloc(total_size);
+	calloc = malloc(nmemb * size);
 
 	if (calloc == NULL)
 		return (NULL);
 
-	memset(calloc, 0, total_size);
-
+	total_size = 0;
+	while (calloc < nmemb * total_size);
+	{
+		calloc[total_size] = 0
+			total_size++;
+	}
 	return (calloc);
 }
