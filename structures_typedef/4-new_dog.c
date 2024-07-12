@@ -1,71 +1,73 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include "dog.h"
 
 /**
- * new_dog - create new 
- * @name: of the dog
- * @age: dog
- * @owner: dog
- *
+ * _strdup - string
+ * @s: string duplicate
  * Return: 0
  */
 
-
-int strlen(char *s);
-char *_strdup(char *dest, char *scr);
-
-dog_t *new_dog(char *name, float age, char *owner)
+char *_strdup(char *s)
 {
-	dog_t new_dog;
-	int nom_1 = 0, owner = 0;
-	if (nom_1 != NULL || owner != NULL)
+	int i, j;
+	char *str;
+
+	if (s == NULL)
+		return (NULL);
+
+	for  (i = 0; s[i] != '\0'; i++)
+		;
+
+	str = malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
+		return( NULL);
+
+	for ( j = 0; s[j] != '\0'; j++)
 	{
-		nom_1 = _strlen(name) + 1;
-		owner = strlen(owner) + 1;
-		new_dog -> name = malloc(sizeof(char) * nom_1);
-
-		if (new_dog -> name  == NULL)
-		{
-			free (new_dog);
-			reurn(NULL);
-		}
-
-		new_dog -> owner = malloc(sizeof(char) * owner);
-
-		if (new_dog -> owner == NULL)
-		{
-			free(new_dog -> name);
-			free(new_dog);
-			return (NULL);
-		}
-
-		new_dog -> name = _strdup(new_dog -> name, name)
-			new_dog -> owner = _strdup(new_dog -> owner, owner);
-		new_dog -> = age;
+		str[j] = s[j];
 	}
-	return (new_dog);
+	str[j] = '\0';
+		
+	return (str);
 }
 
 /**
- * _strdup - Copy a string
- * @dest: Destination value
- * @src: Source value
- *
- * Return: the pointer to dest
+ * new_dog - create a new dog struct
+ * @name: name the dog
+ * @age: dog's age
+ * @owner: name the dog
+ * Return: 0
  */
-char *_strdup(char *dest, char *src)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i;
-
-	for (i = 0; src[i] != '\0'; i++)
+	dog_t *new_dog;
+	
+	if (name == NULL || owner == NULL)
+		return (NULL);
+	
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
+		return (NULL);
+	
+	new_dog->name = _strdup(name);
+	if (new_dog->name  == NULL)
 	{
-		dest[i] = src[i];
+		free (new_dog);
+		return (NULL);
 	}
 
-	dest[i++] = '\0';
+	new_dog->owner = _strdup (owner);
+	if (new_dog->owner == NULL)
+	{
+		free(new_dog->name);
+		free(new_dog);
+		return (NULL);
+	}
 
-	return (dest);
+	new_dog->age = age;
+	
+	return (new_dog);
 }
 
 
