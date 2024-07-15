@@ -37,8 +37,7 @@ void print_string(va_list list)
 
 	if (z == NULL)
 	{
-		printf("(nil)");
-		return;
+		z = "(nil)";
 	}
 	printf("%s", z);
 }
