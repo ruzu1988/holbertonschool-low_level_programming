@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
@@ -7,36 +8,39 @@
  * @argumentos: arguments pointer
  */
 void print_char(va_list argumentos)
-	printf("%s", va_arg(argumentos, int));
-
+{
+	printf("%c", va_arg(argumentos, int));
+}
 /**
  * print_integer - print integer
  * @argumentos: argument pointer
  */
 void print_integer(va_list argumentos)
+{
 	printf("%d", va_arg(argumentos, int));
-
+}
 /**
  * print_float - print float
  * @argumentos: arguments pointers
  */
 void print_float(va_list argumentos)
+{
 	printf("%f", va_arg(argumentos, double));
-
+}
 /**
  * print_string - print string
- * @argumentos: argument pointers
+ * @args: argument pointers
  */
-void print_string(va_list argumentos)
+void print_string(va_list args)
 {
-	char *argumentos = va_arg(argumentos, char *);
+	char *z = va_arg(args, char *);
 
-	if (argumentos != NULL)
+	if (z == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", argumentos);
+	printf("%s", z);
 }
 
 /**
@@ -46,34 +50,33 @@ void print_string(va_list argumentos)
 
 void print_all(const char * const format, ...)
 {
-	print_type types[] = {
-	{"c", print_char};
-	{"i", print_ integer};
-	{"f", print_ float};
-	{"s", print_string};
-	{NULL, NULL}
+	types_t types[] = {
+		{'c', print_char},
+		{'i', print_integer},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
 	};
-	 va_list argumentos;
-	 char *sepa == "";
-	 int ind = 0;
-	 int j = 0;
-	
-	 va_start(argumentos, format);
-	 while (format || format[i])
-	 {
-		 while (types[j].type)
-		 {
-			 if (*types[j].type == format[i])
-			 { ptintf("%s", separator);
-				 types[j].f(argumentos);
-				 separator = ", ";
-			 }
-			 j++
-		 }
-		 j = 0;
-		 ind++;
-	 }
-	 printf("\n");
-	 va_end(argumentos);
-}
+	va_list args;
+	char *sep1 = " ", *sep2 = ", ";
+	int i = 0, j = 0;
 
+	va_start(args, format);
+	while (format != NULL && format[i] != '\0')
+	{
+		j = 0;
+		while (types[j].z != '\0')
+		{
+			if (format[i] == types[j].z)
+			{
+				printf("%s", sep1);
+				types[j].f(args);
+				sep1 = sep2;
+			}
+			j++;
+		}
+		i++;
+	}
+	printf("\n");
+	va_end(args);
+}
