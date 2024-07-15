@@ -5,35 +5,35 @@
 
 /**
  * print_char - print char
- * @argumentos: arguments pointer
+ * @list: va_list passed to function
  */
-void print_char(va_list argumentos)
+void print_char(va_list list)
 {
-	printf("%c", va_arg(argumentos, int));
+	printf("%c", va_arg(list, int));
 }
 /**
  * print_integer - print integer
- * @argumentos: argument pointer
+ * @list: va_list passed to function
  */
-void print_integer(va_list argumentos)
+void print_integer(va_list list)
 {
-	printf("%d", va_arg(argumentos, int));
+	printf("%d", va_arg(list, int));
 }
 /**
  * print_float - print float
- * @argumentos: arguments pointers
+ * @list: va_list passed to function
  */
-void print_float(va_list argumentos)
+void print_float(va_list list)
 {
-	printf("%f", va_arg(argumentos, double));
+	printf("%f", va_arg(list, double));
 }
 /**
  * print_string - print string
- * @args: argument pointers
+ * @list: va_list passed to function
  */
-void print_string(va_list args)
+void print_string(va_list list)
 {
-	char *z = va_arg(args, char *);
+	char *z = va_arg(list, char *);
 
 	if (z == NULL)
 	{
@@ -47,30 +47,29 @@ void print_string(va_list args)
  * print_all - prints anything
  * @format: types of arguments passed to the function
  */
-
 void print_all(const char * const format, ...)
 {
-	types_t types[] = {
+	types_t type[] = {
 		{'c', print_char},
 		{'i', print_integer},
 		{'f', print_float},
 		{'s', print_string},
 		{'\0', NULL}
 	};
-	va_list args;
+	va_list argumentos;
 	char *sep1 = " ", *sep2 = ", ";
 	int i = 0, j = 0;
 
-	va_start(args, format);
+	va_start(argumentos, format);
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (types[j].z != '\0')
+		while (type[j].z != '\0')
 		{
-			if (format[i] == types[j].z)
+			if (format[i] == type[j].z)
 			{
 				printf("%s", sep1);
-				types[j].f(args);
+				type[j].f(argumentos);
 				sep1 = sep2;
 			}
 			j++;
@@ -78,5 +77,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
-	va_end(args);
+	va_end(argumentos);
 }

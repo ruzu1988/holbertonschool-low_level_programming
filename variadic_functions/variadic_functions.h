@@ -10,12 +10,12 @@
 typedef struct types
 {
 char z;
-void (*f)(va_list args);
+void (*f)(va_list list);
 } types_t;
-void print_string(va_list argumentos);
-void print_float(va_list argumentos);
-void print_integer(va_list argumentos);
-void print_char(va_list argumentos);
+void print_string(va_list list);
+void print_float(va_list list);
+void print_integer(va_list list);
+void print_char(va_list list);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
