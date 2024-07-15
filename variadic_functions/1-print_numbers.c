@@ -1,5 +1,6 @@
-#include <stdio.h>
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stddef.h>
 /**
  * print_numbers - prints number followed by a separator and a new line
  * @n: numero de argumentos
@@ -19,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		printf("%d", va_arg(args, int));
 
-		if (separator != NULL || i < n - 1)
+		if (separator != NULL && i < n - 1)
 		{
 		printf("%s", separator);
 		}
