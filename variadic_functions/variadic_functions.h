@@ -1,10 +1,17 @@
 #include <stdarg.h>
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
+
+/**
+ * struct types - estructuras para emparejar caracteres con funciones
+ * @z: caracter que representa el tipo de dato
+ * @f: funcion que maneja el tipo de dato correspondiente
+ */
 typedef struct types {
   char z;
   void (*f)(va_list args);
 } types_t;
+
 void print_string(va_list argumentos);
 void print_float(va_list argumentos);
 void print_integer(va_list argumentos);
