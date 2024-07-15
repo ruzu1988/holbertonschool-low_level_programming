@@ -6,14 +6,15 @@
  * sum_them_all - suma todos los argumentos pasados a la funcion
  * @n: numero de argumentos
  *
- * Return: 0
+ * Return: total de la suma
  */
 
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list argumentos;
 	unsigned int ind;
 	int sum = 0;
+
+	va_list argumentos;
 
 	va_start(argumentos, n);
 
