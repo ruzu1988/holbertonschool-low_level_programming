@@ -2,18 +2,22 @@
 #include <stdio.h>
 
 /**
- * @n - function fills the first n
- * @s - bytes of the memory area pointed to by s
- * @b - the constant byte b
+ * _memset - fills memory with a constant byte
+ * @n: the number of bytes to be filled
+ * @s: pointer to the memory area to be filled
+ * @b: the constant byte to fill the memory with
+ *
  * Return: returns a pointer to the memory area s
  */
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+	unsigned int ballena;
 
-	for (i = 0; i < n; i++)
-		s[i] = b;
-
+	for (ballena = 0; ballena < n; ballena++)
+	{
+		s[ballena] = b;
+	}
+	
 	return (s);
 }
