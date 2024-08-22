@@ -7,25 +7,26 @@
  * @s: the string to be scanned
  * @accept: the string containing the character to match
  *
- * Return: s
+ * Return: pointer to the byte in s that matches one of the bytes in accept,
+ * or NULL if no such byte is found
  */
 
 char *_strpbrk(char *s, char *accept)
 {
-        char *ptr;
+	char *ptr;
 
-        while (*s)
-        {
-                for (ptr = accept; *ptr; ptr++)
-                {
-                        if (*s == *ptr)
-                        {
-                                return (s);
-                        }
-				}
+	while (*s)
+	{
+		for (ptr = accept; *ptr; ptr++)
+		{
+			if (*s == *ptr)
+			{
+				return (s);
+			}
+		}
 
-                s++;
-        }
+		s++;
+	}
 
-        return (NULL);
+	return (NULL);
 }
