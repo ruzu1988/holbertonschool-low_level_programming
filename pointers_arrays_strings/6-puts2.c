@@ -7,17 +7,14 @@
  */
 void puts2(char *str)
 {
-	char *pointer = str;
-	int size = 0;
-	int limit = 0;
+	int idx, len;
 
-	while (str[size] != '\0')
-		size++;
-	while (limit < size)
-	{
-		_putchar(*str);
-		pointer += 2;
-		limit += 2;
-	}
+	len = 0;
+
+	while (str[len] != '\0')
+		len++;
+	for (idx = 0; idx < len; idx += 2)
+		_putchar(str[idx]);
+
 	_putchar('\n');
 }
