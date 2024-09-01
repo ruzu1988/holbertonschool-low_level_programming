@@ -15,8 +15,9 @@ void print_chessboard(char (*a)[8])
 	{
 		for (negros = 0; negros < 8; negros++)
 		{
-			printf("%c ", a[blancos][negros]);
+			putchar(a[blancos][negros]);
+			putchar(' ');
 		}
-		printf("\n");
+		putchar('\n');
 	}
 }
