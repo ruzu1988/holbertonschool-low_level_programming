@@ -29,6 +29,11 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 != NULL)
 		strcpy(concat, s1);
+	else
+		concat[0] = '\0';
 
+	if (s2 != NULL)
+		strcat(concat, s2);
+	
 	return (concat);
 }
